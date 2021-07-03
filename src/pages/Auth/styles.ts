@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-
 export const Container = styled.View`
     flex:1;
     justify-content: center;
@@ -9,14 +8,14 @@ export const Container = styled.View`
     background:  ${({ theme }) => theme.colors.primaryOne};
 `;
 
-export const TextDefault = styled.Text`
+export const TextDefault = styled.Text` 
     font-size: 20px;
     color: black;
 `;
 
 export const GitHubIcon = styled(Icon).attrs({
-    name: 'github',
-    size:96,
+  name: 'github',
+  size: 96,
 })`
-    color: ${({theme}) => theme.colors.primaryTwo};
+    color: ${({ theme }) => theme.colors.primaryTwo};
 `;
