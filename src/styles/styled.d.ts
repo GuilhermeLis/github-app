@@ -1,23 +1,25 @@
-import "styled-components";
+import 'styled-components';
 
-declare module "styled-components" {
-  export interface DefaultTheme {
+declare module 'styled-components' {
+    export interface DefaultTheme {
         colors: {
-            primaryOne: string,
-            primaryTwo: string,
-            white: string,
-            error: string,
-        }
+            primaryOne: string;
+            primaryTwo: string;
+            primaryThree: string;
+            secundaryOne: string;
+            sedundaryTwo: string;
+            white: string;
+            error: string;
+        };
 
         input: {
-            background: string,
-            border: string
-        }
+            background: string;
+            border: string;
+        };
 
         button: {
-            background: string,
-            textColor: string
-        }
-
+            background: string;
+            textColor: string;
+        };
     }
 }

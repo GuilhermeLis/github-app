@@ -7,13 +7,13 @@ import { AuthTypes } from './ducks';
 function* signIn({ username }: singIN) {
     yield put({ type: 'START_LOADING_BUTTON' });
     try {
-        const { data, status } = yield call(api.get, `users/${username}`);
-        const { data: userInfor } = data;
+        const { data: userInfor, status } = yield call(api.get, `users/${username}`);
         if (status === 200) {
             yield put({
                 type: 'SET_USER_DATA',
                 id: userInfor.id,
                 photo: userInfor.avatar_url,
+                username: userInfor.login,
                 name: userInfor.login,
                 email: userInfor.email,
                 location: userInfor.location,
@@ -22,14 +22,18 @@ function* signIn({ username }: singIN) {
                 repos: userInfor.public_repos,
                 bio: userInfor.bio,
             });
+            yield put({ type: 'SET_IS_LOGGED', isLogged: true });
         }
     } catch (error) {
+        console.log(error);
         Alert.alert('Algo inesperado aconteceu');
     }
     yield put({ type: 'RESTART_LOADING_BUTTON' });
 }
 
-function* signOut() {}
+function* signOut() {
+    yield put({ type: 'SET_IS_LOGGED', isLogged: false });
+}
 
 export default all([
     takeLatest(AuthTypes.SIGN_IN_REQUEST, signIn),

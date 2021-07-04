@@ -3,6 +3,7 @@ import { action } from '~/store/modules/@types';
 type UserData = {
     id: number;
     photo: string;
+    username: string;
     name: string;
     email: string;
     location: string;
@@ -15,6 +16,7 @@ type UserData = {
 export interface DucksType {
     id: number;
     photo: string;
+    username: string;
     name: string;
     email: string;
     location: string;

@@ -36,7 +36,6 @@ const setIsLogged = (
     action: updateIsLogged
 ): INITIAL_STATE_TYPE => {
     const { isLogged } = action;
-    console.log(isLogged);
     return { ...state, isLogged };
 };
 

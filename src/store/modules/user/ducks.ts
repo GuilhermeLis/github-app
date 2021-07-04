@@ -33,6 +33,7 @@ type INITIAL_STATE_TYPE = ImmutableObject<DucksType>;
 
 export const INITIAL_STATE = Immutable<DucksType>({
     id: 0,
+    username: '',
     photo: '',
     name: '',
     email: '',
@@ -47,10 +48,22 @@ const setUserData = (
     state: INITIAL_STATE_TYPE,
     action: updateUserData
 ): INITIAL_STATE_TYPE => {
-    const { id, photo, name, email, location, followers, following, repos, bio } = action;
+    const {
+        id,
+        photo,
+        username,
+        name,
+        email,
+        location,
+        followers,
+        following,
+        repos,
+        bio,
+    } = action;
     return {
         ...state,
         id,
+        username,
         photo,
         name,
         email,

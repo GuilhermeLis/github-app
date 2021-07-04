@@ -25,7 +25,7 @@ const Auth: React.FC = () => {
             <ButtonContainer onPress={singIn}>
                 <ButtonInnerContainer>
                     {loadingButton ? (
-                        <ButtonText>ENTRAR</ButtonText>
+                        <ButtonText>Carregando...</ButtonText>
                     ) : (
                         <Fragment>
                             <ButtonText>ENTRAR</ButtonText>
