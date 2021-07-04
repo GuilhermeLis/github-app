@@ -1,6 +1,12 @@
 {
+    "editor.formatOnSave": true,
+    "eslint.validate": ["typescript", "typescriptreact"],
     "editor.codeActionsOnSave": {
         "source.fixAll": true,
+        "source.organizeImports": true
     },
-    "typescript.tsdk": "node_modules/typescript/lib",
+    "prettier.configPath": ".prettierrc",
+    "terminal.explorerKind": "external",
+
+    "typescript.tsdk": "node_modules/typescript/lib"
 }

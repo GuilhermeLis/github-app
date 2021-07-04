@@ -1,29 +1,19 @@
-import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { setNavigator } from '~/services/navigate';
-
-import AuthStack from './auth.routes';
+import { DefaultRootState } from '~/store/@types';
 import AppStack from './app.routes';
-// import useAuth from '../src/contexts/auth';
-// import IsLoading from '../src/components/Loading';
+import AuthStack from './auth.routes';
 
 function Routes() {
-  // const { logged, loading } = useAuth();
+    const { isLogged } = useSelector((state: DefaultRootState) => state.auth);
 
-  // if (loading) {
-  //   return <IsLoading />;
-  // }
-
-  return (
-    
-    <NavigationContainer ref={setNavigator}>
-      {/* { logged? */}
-       {/* <AppStack />   */}
-       {/* : */}
-        <AuthStack />
-    </NavigationContainer>
-  );
+    return (
+        <NavigationContainer ref={setNavigator}>
+            {isLogged ? <AppStack /> : <AuthStack />}
+        </NavigationContainer>
+    );
 }
 
 export default Routes;

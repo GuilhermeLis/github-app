@@ -3,6 +3,9 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { ThemeProvider } from 'styled-components';
 
+import './config/ReactotronConfig';
+
+
 // import {
 //   Lato_300Light,
 //   Lato_400Regular,
@@ -10,10 +13,10 @@ import { ThemeProvider } from 'styled-components';
 //   useFonts,
 // } from '@expo-google-fonts/lato';
 
-// import { Provider } from 'react-redux';
-// import { PersistGate } from 'redux-persist/integration/react';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
-// import { store, persistor } from './store';
+import { store, persistor } from './store';
 
 import Routes from './routes';
 import defaultTheme from './styles/themes/default';
@@ -31,12 +34,12 @@ export default function Index() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      {/* <Provider store={store}>
-        <PersistGate persistor={persistor}> */}
+      <Provider store={store}> 
+        <PersistGate persistor={persistor}> 
           <StatusBar style="dark" backgroundColor="#ede8ed" />
           <Routes />
-        {/* </PersistGate>
-      </Provider> */}
+        </PersistGate>
+      </Provider> 
     </ThemeProvider>
   );
 }
